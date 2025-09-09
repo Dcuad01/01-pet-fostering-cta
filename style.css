@@ -22,62 +22,63 @@ body {
 
 /* Style for the CTA banner section */
 .cta-banner {
-  background-image: url('img/cta-bg.jpg'); /* Set background image */
-  background-size: cover; /* Make image cover the banner */
-  background-position: center; /* Center the image */
-  position: relative; /* Needed for overlay */
-  color: #ffffff; /* White text for contrast */
-  padding: 60px 20px; /* Tall banner with space around content */
+  background: linear-gradient(rgba(14, 87, 140, 0.85), rgba(21, 152, 149, 0.75)), url('img/cta-bg.jpg') center center / cover no-repeat;
+  color: #ffffff;
+  padding: 100px 20px;
   text-align: center;
 }
 
-/* Light overlay for the banner */
-.cta-banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(30, 127, 163, 0.6); /* Semi-transparent blue overlay */
-  z-index: 1;
-}
-
-/* Main heading style */
 .cta-banner h1 {
-  font-size: 2.5em; /* Large heading */
-  margin-bottom: 20px;
+  font-size: 2em;
+  margin: 0 0 15px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55); /* Subtle shadow to improve contrast */
 }
 
-/* Description text style */
 .cta-banner p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55); /* Subtle shadow to improve contrast */
 }
 
-/* Call-to-action button style */
 .cta-button {
-  background-color: #2ec4b6; /* Teal button for calmness */
+  background-color: #2ec4b6;
   color: #ffffff;
-  padding: 15px 35px;
+  padding: 10px 25px;
   text-decoration: none;
-  font-size: 1.1em;
-  border-radius: 5px; /* Slightly rounded corners */
   border: none;
-  cursor: pointer;
-  display: inline-block;
+  border-radius: 4px;
   font-weight: bold;
+  cursor: pointer;
 }
 
-/* Button hover effect for interactivity */
-.cta-button:hover {
-  background-color: #159895; /* Slightly darker teal on hover */
+/* Simple two-column layout for the info section using floats */
+.info-section {
+  width: 90%; /* Keep content comfortably within the page */
+  max-width: 1000px; /* Limit line length for readability */
+  margin: 30px auto; /* Center the section on the page */
 }
 
-/* Make sure the text is above the overlay */
-.cta-banner h1,
-.cta-banner p,
-.cta-banner .cta-button {
-  position: relative;
-  z-index: 2;
+.info-section .column {
+  width: 48%; /* Two even columns with a small gap */
+  float: left; /* Place columns side by side */
+  margin-right: 4%; /* Space between columns */
+}
+
+/* Remove right margin from the last column */
+.info-section .column:last-child {
+  margin-right: 0;
+}
+
+/* Make sure images scale to their container */
+.info-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clear floats after the columns */
+.info-section::after {
+  content: "";
+  display: block;
+  clear: both;
 }
